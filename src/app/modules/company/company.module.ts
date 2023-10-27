@@ -7,6 +7,7 @@ import { MailboxComponent } from './pages/mailbox/mailbox.component';
 import { OrderStatusComponent } from './pages/order-status/order-status.component';
 import { RegisterdAgentComponent } from './pages/registerd-agent/registerd-agent.component';
 import { ReceiptsComponent } from './pages/receipts/receipts.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ReceiptsComponent } from './pages/receipts/receipts.component';
   ],
   imports: [
     CommonModule,
-    CompanyRoutingModule
+    CompanyRoutingModule,
+    SharedModule
   ]
 })
 export class CompanyModule { }
