@@ -10,12 +10,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { CompanySidebarComponent } from './layouts/company-sidebar/company-sidebar.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { ConfirmationComponent } from './dialogs/confirmation/confirmation.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     DashSidebarComponent,
-    CompanySidebarComponent
+    CompanySidebarComponent,
+    ConfirmationComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +28,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   exports: [
     DashSidebarComponent,
