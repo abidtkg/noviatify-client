@@ -11,6 +11,10 @@ import { SharedModule } from '../shared/shared.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { CompanyInfoComponent } from './pages/company-info/company-info.component';
+import { MatIconModule } from '@angular/material/icon';
+import { ComplianceComponent } from './pages/compliance/compliance.component';
+import { DomainEmailComponent } from './pages/domain-email/domain-email.component';
 
 
 @NgModule({
@@ -19,7 +23,10 @@ import { MatButtonModule } from '@angular/material/button';
     MailboxComponent,
     OrderStatusComponent,
     RegisterdAgentComponent,
-    ReceiptsComponent
+    ReceiptsComponent,
+    CompanyInfoComponent,
+    ComplianceComponent,
+    DomainEmailComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +34,8 @@ import { MatButtonModule } from '@angular/material/button';
     SharedModule,
     MatCardModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class CompanyModule { }

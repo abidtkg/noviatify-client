@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./receipts.component.scss']
 })
 export class ReceiptsComponent {
+  displayedColumns: string[] = ['cname', 'orderno', 'ordertype', 'amount', 'receipt', 'orderdate', 'status'];
 
+  public dataSource = [{
+    state: 'NOVIATIFY INC.',
+    doctype: 'Virtual Address Notification',
+    recvdate: 'Oct. 17, 2023',
+    status: 'Unread',
+  }, 
+ ]
 }
