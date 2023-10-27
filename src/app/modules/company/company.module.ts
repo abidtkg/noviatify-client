@@ -8,6 +8,9 @@ import { OrderStatusComponent } from './pages/order-status/order-status.componen
 import { RegisterdAgentComponent } from './pages/registerd-agent/registerd-agent.component';
 import { ReceiptsComponent } from './pages/receipts/receipts.component';
 import { SharedModule } from '../shared/shared.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     CompanyRoutingModule,
-    SharedModule
+    SharedModule,
+    MatCardModule,
+    MatTableModule,
+    MatButtonModule
   ]
 })
 export class CompanyModule { }
