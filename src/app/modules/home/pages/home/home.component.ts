@@ -10,6 +10,8 @@ import { IPackage, IState } from '../../interfaces/api.interface';
 export class HomeComponent implements OnInit {
 
     public country: string = 'x';
+    public inputEntityType: string = '';
+    public inputStateFormation: string = '';
 
     public states: IState[] = [];
     public packages: IPackage[] = [];
@@ -20,7 +22,7 @@ export class HomeComponent implements OnInit {
     ){}
 
     ngOnInit(): void {
-        this.loadPackages();
+        
     }
 
     loadStates(){
@@ -58,6 +60,10 @@ export class HomeComponent implements OnInit {
         }else{
             this.entityTypes = [];
         }
+    }
+
+    onSelectFormation(){
+        this.loadPackages();
     }
 
 }
