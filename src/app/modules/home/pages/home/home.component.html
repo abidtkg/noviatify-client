@@ -35,26 +35,21 @@
                     and state of formation.</p>
             </div>
             <div class="col-md-4 mt-3">
-                <select class="form-select form-select-lg mb-3" aria-label="Large select example">
-                    <option selected>Select Country</option>
-                    <option value="1">United States (US)</option>
-                    <option value="2">United Kingdom (UK)</option>
+                <select [(ngModel)]="country" (change)="countrySelectionUpdate()" class="form-select form-select-lg mb-3" aria-label="Large select example">
+                    <option selected disabled value="x">Select Country</option>
+                    <option value="us">United States (US)</option>
+                    <option value="uk">United Kingdom (UK)</option>
                 </select>
             </div>
-            <div class="col-md-4 mt-3">
+            <div *ngIf="entityTypes.length != 0" class="col-md-4 mt-3">
                 <select class="form-select form-select-lg mb-3" aria-label="Large select example">
-                    <option selected>Entity Type</option>
-                    <option value="1">LLC</option>
-                    <option value="2">S-Corporation</option>
-                    <option value="3">C-Corportation</option>
-                    <option value="3">Non-Profit</option>
+                    <option *ngFor="let entityType of entityTypes" [value]="entityType.id">{{entityType.name}}</option>
                 </select>
             </div>
-            <div class="col-md-4 mt-3">
+            <div *ngIf="states.length != 0" class="col-md-4 mt-3">
                 <select class="form-select form-select-lg mb-3" aria-label="Large select example">
-                    <option selected>State Of Formation</option>
-                    <option value="1">Alabama</option>
-                    <option value="2">Alaska</option>
+                    <option selected disabled>State Of Formation</option>
+                    <option *ngFor="let state of states" [value]="state._id">{{state.name}}</option>
                 </select>
             </div>
             <div class="col-md-12">
@@ -64,19 +59,24 @@
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-md-4">
+            <div *ngFor="let package of packages" class="col-md-4">
                 <div class="card" style="max-width: 22rem;">
                     <div class="text-center">
-                        <h4 class="mt-3 p-3">Platinum</h4>
-                        <p>Full service features
-                            <br> at the best value
-                        </p>
-                        <img src="https://orders.incfile.com/static/order/v3/images/rocket.png"
+                        <h1 class="mt-3 p-3">{{ package.name }}</h1>
+                        <div class="d-flex justify-content-center">
+                            <p style="max-width: 70%;">
+                                {{ package.top_description }}
+                            </p>
+                        </div>
+                        <img [src]="package.image_link"
                             style="width: max-content; height: 100px;" class="img-fluid" alt="...">
                     </div>
 
                     <div class="card-body text-center">
-                        <h5 class="card-title h2 fw-bold">$535</h5>
+                        <h1 class="card-title h2 fw-bold">
+                            
+                            $535
+                        </h1>
                         <p class="card-text">One time transparent payment</p>
                         <a href="/start-company" class="btn btn-lg btn-primary ">
                             Get The Premium Package
